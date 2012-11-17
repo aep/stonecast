@@ -1,0 +1,131 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH LIBPLAYER-TEST 1 "10/12/2009"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+libplayer-test \- a test media player utility which uses libplayer
+.SH SYNOPSIS
+.B libplayer-test
+[\fIoptions \fR...] [\fIfiles \fR...]
+.SH DESCRIPTION
+This manual page documents briefly the \fBlibplayer-test\fP command.
+.PP
+\fBlibplayer-test\fP is a command-line media player which uses libplayer
+as a backend. It is mainly used to test and exercise libplayer capabilities.
+.SH OPTIONS
+.TP
+\fB\-h\fR \fB\-\-help\fR
+this help
+.TP
+\fB\-p\fR \fB\-\-player\fR \fB<player>\fR
+specify the player (mplayer|xine|vlc|gstreamer)
+.TP
+\fB\-a\fR \fB\-\-audio\fR \fB<audioout>\fR
+specify the audio output (alsa|oss|pulse|null)
+.TP
+\fB\-g\fR \fB\-\-video\fR \fB<videoout>\fR
+specify the video output (x11|sdl:x11|xv|gl|vdpau|fb|directfb|vaapi|v4l2|null)
+.TP
+\fB\-g\fR \fB\-\-quality\fR \fB<level>\fR
+specify the picture quality (0|1|2, best to worse)
+.TP
+\fB\-v\fR \fB\-\-verbose\fR
+increase verbosity
+.PP
+Default values are dummy player, auto video and auto audio output.
+.PP
+Commands to use libplayer\-test:
+.IP #
+change playback mode (auto or single)
+.IP \&.
+change loop value and mode
+.IP ,
+enable/disable shuffle on the playlist
+.IP %
+write a text on the OSD
+.IP k
+enable/disable OSD
+.IP +/\-
+increase/decrease speed
+.IP ]/[
+audio delay +/\- 100 ms
+.IP 0/9
+increase/decrease volume
+.IP m
+set/unset mute
+.IP 2/1
+5s forward/backward
+.IP 3/4
+previous/next audio track
+.IP 5/6
+previous/next subtitle
+.IP 7/8
+previous/next TV analog channel
+.IP {/}
+previous/next radio channel
+.IP (/)
+previous/next chapter
+.IP u
+toggle subtitle visibility
+.IP a
+change aspect ratio (original/16:9)
+.IP l
+load a stream in the playlist
+.IP v
+print properties and metadata of the current stream
+.IP j
+take a video snapshot of a specific time position
+.IP y
+select a radio channel
+.IP z
+select a TV channel
+.IP i
+print current time position
+.IP p
+start a new playback
+.IP o
+pause/unpause the current playback
+.IP s
+stop the current playback
+.IP b
+start the previous stream in the playlist
+.IP n
+start the next stream in the playlist
+.IP c
+continue with the next stream accordingly to the playback mode
+.IP r
+remove the current stream of the playlist
+.IP t
+remove all streams of the playlist
+.IP q
+quit libplayer\-test
+.PP
+Commands for dvdnav:
+.IP ARROWS
+menu navigation
+.IP BACKSPACE
+return to menu
+.IP ENTER
+select
+.SH "SEE ALSO"
+.B libplayer-testvdr
+(1)
+.SH AUTHOR
+libplayer was written by Benjamin Zores <ben@geexbox.org> and Mathieu Schroeter <mathieu@schroetersa.ch>.
+.PP
+This manual page was written by Davide Cavalca <davide@geexbox.org>,
+for the Debian project (but may be used by others).
+

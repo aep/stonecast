@@ -1,0 +1,46 @@
+COMMON
+~~~~~~
+
+GeeXboX libplayer is a multimedia A/V abstraction layer API.
+Its goal is to interact with Enna Media Center.
+
+libplayer provides a generic A/V API that relies on various
+multimedia player for Linux systems.
+It currently supports MPlayer, xine, GStreamer and VLC.
+
+DEVELOPERS
+~~~~~~~~~~
+
+Build using traditional ./configure && make commands.
+Try ./configure --help for list of available build options
+and audio/video engines bindings.
+
+libplayer uses GNU Coding Standards as default indentation and code style.
+Please always conform to this standard before applying your changes.
+
+In order to provide a minimalistic player dependancy
+towards frontends, only the abstraction layer has to be exported.
+ALWAYS consider player.h as the ONLY public header.
+Private definitions have to go to player_internals.h
+NEVER include other headers in .h files, always do so in .c files.
+NEVER use printf(), always use pl_log().
+Check your code for warnings before commits.
+
+Versioning policy
+--
+The major version means no backward compatibility to previous versions (e.g.
+removal of a function from the public API). The minor version means backward
+compatible change (e.g. addition of a function to the public API or extension
+of an existing data structure). The micro version means a noteworthy binary
+compatible change (e.g. new wrapper).
+
+PACKAGERS
+~~~~~~~~~
+
+Debian/Ubuntu: see ./debian/README.txt
+
+AUTHORS
+~~~~~~~
+
+Benjamin Zores <ben@geexbox.org>
+Mathieu Schroeter <mathieu@schroetersa.ch>
